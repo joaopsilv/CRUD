@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/bootstrap-5.0.0/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/fontawesome-5.15.3/css/all.css}">
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+    <title>Projeto de Comentários</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" th:href="@{/}">Projeto de Comentários</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" th:href="@{/}">Conteúdos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" th:href="@{/usuario/list}">Usuários</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="container container-header-usuario">
+        <h3>Usuários</h3>
+    </div>
+      <div class="container container-usuario table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr class="table-dark">
+              <th>Código</th>
+              <th>Nome</th>
+              <th>Turma</th>
+              <th colspan="3">Ano</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="usuario : ${usuarios}">
+              <td th:text="${usuario.id}"></td>
+              <td th:text="${usuario.nome}"></td>
+              <td th:text="${usuario.turma}"></td>
+              <td th:text="${usuario.ano}"></td>
+              <td class="td-controle"> 
+                <a th:href="@{'/usuario/edit/' + ${usuario.id}}" class="btn btn-outline-secondary"><i class="far fa-edit"></i></a> 
+              </td>
+              <td class="td-controle">
+                <form th:action="@{'/usuario/delete/' + ${usuario.id}}" method="post">
+                  <button class="btn btn-outline-danger" type="submit">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    </nav>
+    <div class="container container-btn-novo-usuario">
+        <a th:href="@{/usuario/add}" class="btn btn-dark"><i class="fa fa-file"></i> Novo</a>
+    </div>
+</body>
+</html>

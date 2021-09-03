@@ -1,0 +1,98 @@
+body{
+    background-color: #2e3338;
+}
+
+ul{
+    margin-bottom: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+.container-header-conteudo{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 32px;
+    color: #fff;
+    background-color: #212529;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container-conteudo{
+    border: 1px solid #212529;
+    background-color: #212529;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+tbody{
+    color: #fff;
+}
+
+.td-controle{
+    width: 90px;
+}
+
+.container-btn-novo-conteudo{
+    width: 100%;
+    text-align: right;
+    margin-top: 16px;
+    padding: 0%;
+}
+
+.container-form-conteudo{
+    border: 1px solid #212529;
+    background-color: #212529;
+    border-radius: 10px;
+    padding: 16px;
+    width: 100%;
+}
+
+.btn-form{
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.container-header-usuario{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 32px;
+    color: #fff;
+    background-color: #212529;
+    border-radius: 10px;
+    text-align: center;
+    width: 60%;
+}
+
+.container-form-usuario{
+    border: 1px solid #212529;
+    background-color: #212529;
+    border-radius: 10px;
+    padding: 16px;
+    width: 60%;
+}
+
+.container-usuario{
+    border: 1px solid #212529;
+    background-color: #212529;
+    border-radius: 10px;
+    padding: 16px;
+    width: 60%;
+}
+
+.container-btn-novo-usuario{
+    width: 60%;
+    text-align: right;
+    margin-top: 16px;
+    padding: 0%;
+}
+
+.select-multiple{
+    height: auto !important;
+}
+
+.navbar-bug{
+    margin-top: -1.3%;
+}
