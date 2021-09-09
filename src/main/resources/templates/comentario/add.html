@@ -22,20 +22,20 @@
               <a class="nav-link" aria-current="page" th:href="@{/}">Conteúdos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" th:href="@{/usuario/list}">Usuários</a>
+              <a class="nav-link" th:href="@{/usuario/list}">Usuários</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" th:href="@{/comentario/list}">Comentários</a>
+              <a class="nav-link active" th:href="@{/comentario/list}">Comentários</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="container container-header-usuario">
-      <h3>Usuários</h3>
+    <div class="container container-header-comentario">
+      <h3>Comentário</h3>
     </div>
-    <div class="container container-form-usuario">
-      <form th:action="@{/usuario/save}" method="POST" th:object="${usuario}">
+    <div class="container container-form-comentario">
+      <form th:action="@{/comentario/save}" method="POST" th:object="${comentario}">
         <div th:if="${erro}" class="alert alert-danger"> <span th:text="${erroMsg}"></span>
       </div>
           <div class="form-floating mb-3">
@@ -43,20 +43,12 @@
               <label for="Cod">Código</label>
           </div>
           <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="Nome" placeholder="Nome" th:field="*{nome}">
-              <label for="Nome">Nome</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="Turma" placeholder="Turma" th:field="*{turma}">
-            <label for="Turma">Turma</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="Ano" placeholder="Ano" th:field="*{ano}">
-            <label for="Ano">Ano</label>
+              <input type="text" class="form-control" id="Texto" placeholder="Comentário" th:field="*{texto}">
+              <label for="Texto">Comentário</label>
           </div>
           <div class="row">
             <div class="col">
-                <a th:href="@{/usuario/list}" class="btn btn-outline-secondary btn-form"> <i class="fa fa-backspace"></i> Voltar</a>
+                <a th:href="@{/comentario/list}" class="btn btn-outline-secondary btn-form"> <i class="fa fa-backspace"></i> Voltar</a>
             </div>
             <div class="col">
                 <button type="submit" class="btn btn-outline-success btn-form"> <i class="fa fa-save"></i> Salvar</button>

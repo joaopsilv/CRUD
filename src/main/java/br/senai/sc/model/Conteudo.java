@@ -27,6 +27,19 @@ public class Conteudo{
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
+    @ManyToOne
+    @JoinColumn(name = "comentario_id")
+    private Comentario comentario;
+
+    public Conteudo(){
+    }
+
+    public Conteudo(String nome, String descircao, String data){
+        this.nome = nome;
+        this.descricao = descircao;
+        this.data = data;
+    }
+
     public Long getId(){
         return id;
     }
@@ -60,5 +73,12 @@ public class Conteudo{
     }
     public void setUsuario(Usuario usuario){
         this.usuario = usuario;
+    }
+
+    public Comentario getComentario(){
+        return comentario;
+    }
+    public void setComentario(Comentario comentario){
+        this.comentario = comentario;
     }
 }

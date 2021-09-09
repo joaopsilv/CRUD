@@ -26,6 +26,15 @@ public class Usuario{
     @NotNull
     private String ano;
 
+    public Usuario(){
+    }
+
+    public Usuario(String nome, String turma, String ano){
+        this.nome = nome;
+        this.turma = turma;
+        this.ano = ano;
+    }
+
     public Long getId(){
         return id;
     }

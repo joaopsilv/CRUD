@@ -7,12 +7,12 @@
     <link rel="stylesheet" th:href="@{/bootstrap-5.0.0/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/fontawesome-5.15.3/css/all.css}">
     <link rel="stylesheet" th:href="@{/css/estilo.css}">
-    <title>Projeto de Comentários</title>
+    <title>Projeto de CRUD</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" th:href="@{/}">Projeto de Comentários</a>
+          <a class="navbar-brand" th:href="@{/}">Projeto de CRUD</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -23,6 +23,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link active" th:href="@{/usuario/list}">Usuários</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/comentario/list}">Comentários</a>
               </li>
             </ul>
           </div>

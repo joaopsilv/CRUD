@@ -1,7 +1,7 @@
 package br.senai.sc.controller;
 
 import br.senai.sc.model.Conteudo;
-import br.senai.sc.model.Usuario;
+import br.senai.sc.service.ComentarioServiceImpl;
 import br.senai.sc.service.ConteudoServiceImpl;
 import br.senai.sc.service.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +21,9 @@ public class ConteudoController{
     @Autowired
     UsuarioServiceImpl usuarioService;
 
+    @Autowired
+    ComentarioServiceImpl comentarioService;
+
     @GetMapping
     public String list(Model model){
         model.addAttribute("conteudos", conteudoService.findAll());
@@ -31,6 +34,7 @@ public class ConteudoController{
     public String add(Model model){
         model.addAttribute("conteudo", new Conteudo());
         model.addAttribute("usuarios", usuarioService.findAll());
+        model.addAttribute("comentarios", comentarioService.findAll());
         return "/conteudo/add";
     }
 
@@ -44,6 +48,7 @@ public class ConteudoController{
     public String edit(@PathVariable long id, Model model){
         model.addAttribute("conteudo", conteudoService.findById(id));
         model.addAttribute("usuarios", usuarioService.findAll());
+        model.addAttribute("comentarios", comentarioService.findAll());
         return "/conteudo/edit";
     }
 
@@ -52,8 +57,9 @@ public class ConteudoController{
         Conteudo content = conteudoService.findById(id);
         content.setNome(conteudo.getNome());
         content.setDescricao(conteudo.getDescricao());
-        content.setData(content.getData());
-        content.setUsuario(content.getUsuario());
+        content.setData(conteudo.getData());
+        content.setUsuario(conteudo.getUsuario());
+        content.setComentario(conteudo.getComentario());
         conteudoService.save(content);
         return new RedirectView("/");
     }
